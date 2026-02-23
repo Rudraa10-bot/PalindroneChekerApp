@@ -1,5 +1,6 @@
 
 import java.util.Scanner;
+import java.util.Stack;
 public class PalindromeCheckerApp {
     public static void main(String[] args){
         Scanner sc=new Scanner(System.in);
@@ -8,20 +9,22 @@ public class PalindromeCheckerApp {
         System.out.println("Enter a string(lower case):");
         s=sc.nextLine();
 
-        char [] chars= s.toCharArray();
+        Stack<Character> stack = new Stack<>();
 
-        int start =0;
-        int end=chars.length - 1;
+        // Push each character of the string into the stack
+        for (char c : s.toCharArray()) {
+            stack.push(c);
+        }
 
-        boolean isPalindrome=true;
+        // Assume palindrome initially
+        boolean isPalindrome = true;
 
-        while (start < end) {
-            if (chars[start] != chars[end]) {
+        // Iterate again through original string
+        for (char c : s.toCharArray()) {
+            if (c != stack.pop()) {
                 isPalindrome = false;
                 break;
             }
-            start++;
-            end--;
         }
 
         if(isPalindrome){
