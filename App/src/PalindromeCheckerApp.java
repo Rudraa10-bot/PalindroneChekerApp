@@ -8,15 +8,17 @@ public class PalindromeCheckerApp {
         System.out.println("Enter a string(lower case):");
         s=sc.nextLine();
         String text="";
+
         for(int i=s.length()-1; i>=0; i--){
-            text=text + s.charAt(i);
-        }
-        if (s.equals(text)) {
-            System.out.println("Palindrome");
-        } else {
-            System.out.println("Not a Palindrome");
+            text=text+s.charAt(i);
         }
 
-        sc.close();
+        if(s.equals(text)){
+            System.out.println("Palindrome");
+        }
+        else{
+            System.out.println("Is not a Palindrome");
+        }
+       sc.close();
     }
 }
