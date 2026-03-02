@@ -5,7 +5,7 @@ public class PalindromeCheckerApp {
         Scanner sc = new Scanner(System.in);
         String s;
         System.out.println("Welcome to Palindrome Checker App Management System");
-        System.out.println("Enter a string(lower case):");
+        System.out.println("Enter a string:");
         s = sc.nextLine();
 
         s = s.toLowerCase();
