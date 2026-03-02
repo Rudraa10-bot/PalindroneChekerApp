@@ -1,7 +1,5 @@
 
 import java.util.Scanner;
-import java.util.Stack;
-import java.util.Queue;
 import java.util.LinkedList;
 public class PalindromeCheckerApp {
     public static void main(String[] args){
@@ -11,21 +9,19 @@ public class PalindromeCheckerApp {
         System.out.println("Enter a string(lower case):");
         s=sc.nextLine();
 
-        Queue<Character> queue = new LinkedList<>();
-        Stack<Character> stack = new Stack<>();
+        LinkedList<Character> list = new LinkedList<>();
 
-        // Push each character of the string into the stack
+        // Push each character of the string into the list
         for (char c : s.toCharArray()) {
-            queue.add(c);
-            stack.push(c);
+            list.addLast(c);
         }
 
         // Assume palindrome initially
         boolean isPalindrome = true;
 
         // Iterate again through original string
-        while (!queue.isEmpty()) {
-            if (queue.remove() != stack.pop()) {
+        while (list.size() > 1) {
+            if (list.removeFirst() != list.removeLast()) {
                 isPalindrome = false;
                 break;
             }
@@ -37,6 +33,6 @@ public class PalindromeCheckerApp {
         else{
             System.out.println("Is not a Palindrome");
         }
-       sc.close();
+        sc.close();
     }
 }
