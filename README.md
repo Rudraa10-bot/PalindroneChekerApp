@@ -1,4 +1,4 @@
-# PalindromeChekerApp
+# PalindromeCheckerApp
 
 
 // running procedure
